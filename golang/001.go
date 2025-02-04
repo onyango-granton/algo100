@@ -10,6 +10,19 @@ func revArr(arr []int) []int {
 	return resArr
 }
 
+func revArrTwoPointer(arr []int) []int{
+	leftPointer := 0
+	rightPointer := len(arr)
+
+	for leftPointer<rightPointer{
+		arr[leftPointer], arr[rightPointer] = arr[rightPointer], arr[leftPointer]
+		leftPointer++
+		rightPointer--
+	}
+
+	return arr
+}
+
 func main() {
-	fmt.Println(revArr([]int{3, 6, 7, 8, 2, 4}))
+	fmt.Println(revArrTwoPointer([]int{3, 6, 7, 8, 2, 4}))
 }
