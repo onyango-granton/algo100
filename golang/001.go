@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func revArr(arr []int) []int {
 	resArr := []int{}
 	for i := len(arr) - 1; i >= 0; i-- {
@@ -23,6 +21,6 @@ func revArrTwoPointer(arr []int) []int {
 	return arr
 }
 
-func main() {
-	fmt.Println(revArrTwoPointer([]int{3, 6, 7, 8, 2, 4}))
-}
+// func main() {
+// 	fmt.Println(revArrTwoPointer([]int{3, 6, 7, 8, 2, 4}))
+// }
