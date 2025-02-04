@@ -10,11 +10,11 @@ func revArr(arr []int) []int {
 	return resArr
 }
 
-func revArrTwoPointer(arr []int) []int{
+func revArrTwoPointer(arr []int) []int {
 	leftPointer := 0
-	rightPointer := len(arr)
+	rightPointer := len(arr) - 1
 
-	for leftPointer<rightPointer{
+	for leftPointer < rightPointer {
 		arr[leftPointer], arr[rightPointer] = arr[rightPointer], arr[leftPointer]
 		leftPointer++
 		rightPointer--
