@@ -4,16 +4,16 @@ import "fmt"
 
 func removeDuplicates(arr []int) []int{
 	seen := make(map[int]bool)
-	result := &[]int{}
+	result := []int{}
 
 	for _,num := range arr{
 		if !seen[num]{
-			*result = append(*result, num)
+			result = append(result, num)
 			seen[num] = true
 		}
 	}
 
-	return *result
+	return result
 }
 
 func main() {
