@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func findMaxMin(arr []int) []int {
-	var max, min = 0, math.MaxInt64
+	max, min := arr[0], arr[0]
 	for _, ch := range arr {
 		if ch > max {
 			max = ch
