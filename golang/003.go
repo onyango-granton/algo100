@@ -1,17 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
 
 func isPalindrome(s string) bool {
 	leftPointer := 0
 	rightPointer := len(s)-1
 
 	for leftPointer <= rightPointer{
-		if !(s[leftPointer] >= 'a' && s[leftPointer] <= 'z' || s[leftPointer] >= 'A' && s[leftPointer] <= 'Z'){
+		if !isAlphanumeric(s[leftPointer]){
 			leftPointer++
 			continue
 		}
-		if !(s[rightPointer] >= 'a' && s[rightPointer] <= 'z' || s[rightPointer] >= 'A' && s[rightPointer] <= 'Z'){
+		if !isAlphanumeric(s[rightPointer]){
 			rightPointer--
 			continue
 		}
@@ -25,11 +28,15 @@ func isPalindrome(s string) bool {
 }
 
 func isSame(char1, char2 byte) bool {
-	return char1 == char2
+	return unicode.ToLower(rune(char1)) == unicode.ToLower(rune(char2))
+}
+
+func isAlphanumeric(ch byte) bool {
+	return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')
 }
 
 func main(){
-	words := []string{"hello", "helo","raccar"}
+	words := []string{"hello","de", "helo","0racc...ar0."}
 	for _, word := range words{
 		fmt.Println(isPalindrome(word))
 	}
