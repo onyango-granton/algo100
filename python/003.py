@@ -13,11 +13,4 @@ def isPalindrome(s):
         right -= 1
     return True
 
-
-def isAlphanumeric(char):
-    return char >= 'a' and char <= 'z' or char >= 'A' and char <= 'Z' or char >= '0' and char <= '9' 
-
-def isSame(char1, char2):
-    return char1.lower() == char2.lower()
-
 print(isPalindrome("0race###Car0....."))
