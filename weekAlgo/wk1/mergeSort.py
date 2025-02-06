@@ -17,31 +17,29 @@ def conquer(leftArr, rightArr):
     while rightP < len(rightArr) and leftP < len(leftArr):
         if rightArr[rightP] <= leftArr[leftP]:
             mainArr[mainP] = rightArr[rightP]
-            # visualize_data(get_coordinates(rightArr))
             rightP += 1
         else:
             mainArr[mainP] = leftArr[leftP]
-            # visualize_data(get_coordinates(leftArr))
             leftP += 1
         mainP += 1
-        #visualize_data(get_coordinates(mainArr))
+        visualize_data(get_coordinates(mainArr))
     while rightP < len(rightArr):
         mainArr[mainP] = rightArr[rightP]
-        #visualize_data(get_coordinates(mainArr))
+        visualize_data(get_coordinates(mainArr))
         mainP += 1
         rightP += 1
     while leftP < len(leftArr):
         mainArr[mainP] = leftArr[leftP]
-        #visualize_data(get_coordinates(mainArr))
+        visualize_data(get_coordinates(mainArr))
         mainP += 1
         leftP += 1
-    #visualize_data(get_coordinates(mainArr))
+    visualize_data(get_coordinates(mainArr))
     return mainArr
 
-# def get_coordinates(arr):
-#     x_values = [i for i in range(len(arr))]
-#     print({"X":x_values, "Y":arr})
-#     return {"X":x_values, "Y":arr}
+def get_coordinates(arr):
+    x_values = [i for i in range(len(arr))]
+    print({"X":x_values, "Y":arr})
+    return {"X":x_values, "Y":arr}
 
 def visualize_data(data):
     x_value = data.get("X")
