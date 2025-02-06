@@ -33,7 +33,7 @@ def conquer(leftArr, rightArr):
         visualize_data(get_coordinates(mainArr))
         mainP += 1
         leftP += 1
-    visualize_data(get_coordinates(mainArr))
+    # visualize_data(get_coordinates(mainArr))
     return mainArr
 
 def get_coordinates(arr):
@@ -44,13 +44,16 @@ def get_coordinates(arr):
 def visualize_data(data):
     x_value = data.get("X")
     y_value = data.get("Y")
+    
     plt.clf()
+    plt.xlabel("Ordered Index")
+    plt.ylabel("Value")
     plt.yticks(y_value)
     plt.bar(x_value, y_value)
 
-    time.sleep(2)
+    time.sleep(0.5)
 
     plt.show()
 
 
-print(divide([3,6,7,3,2,5,6,57,4,34]))
+print(divide([3,6,7,3,2,5,6,5,4,10]))
