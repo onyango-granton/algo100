@@ -1,13 +1,11 @@
 package main
 
-import "fmt"
-
-func removeDuplicates(arr []int) []int{
+func removeDuplicates(arr []int) []int {
 	seen := make(map[int]bool)
 	result := []int{}
 
-	for _,num := range arr{
-		if !seen[num]{
+	for _, num := range arr {
+		if !seen[num] {
 			result = append(result, num)
 			seen[num] = true
 		}
@@ -16,6 +14,6 @@ func removeDuplicates(arr []int) []int{
 	return result
 }
 
-func main() {
-	fmt.Println(removeDuplicates([]int{3,3,3}))
-}
+// func main() {
+// 	fmt.Println(removeDuplicates([]int{3,3,3}))
+// }
