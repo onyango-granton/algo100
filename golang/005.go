@@ -58,7 +58,7 @@ func compareArr(arrOne, arrTwo []int) []int {
 		sortedArrOne = copyArr
 	}
 
-	for pointerOne < len(sortedArrOne) && pointerTwo < len(sortedArrTwo){
+	for pointerOne < len(sortedArrOne) && pointerTwo < len(sortedArrTwo) {
 		if sortedArrOne[pointerOne] == sortedArrTwo[pointerTwo] {
 			if len(resArr)-1 < 0 {
 				resArr = append(resArr, sortedArrOne[pointerOne])
@@ -84,8 +84,8 @@ func compareArr(arrOne, arrTwo []int) []int {
 }
 
 func main() {
-	nums1 := []int{4,5,6,7,3,23,5}
-	nums2 := []int{2,5,6,2,4,4,2,8}
+	nums1 := []int{4, 5, 6, 7, 3, 23, 5}
+	nums2 := []int{2, 5, 6, 2, 4, 4, 2, 8}
 	// fmt.Println(divide([]int{3,6,8,3,24,5,5,3,42,4,67,6}))
 	fmt.Println(compareArr(nums2, nums1))
 }

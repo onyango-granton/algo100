@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func divide(arr []int) []int {
-	if len(arr) < 2{
+	if len(arr) < 2 {
 		return arr
 	}
 
@@ -15,12 +15,12 @@ func divide(arr []int) []int {
 	return conquer(leftArr, rightArr)
 }
 
-func conquer(leftArr, rightArr []int) []int{
+func conquer(leftArr, rightArr []int) []int {
 	mainArr := make([]int, len(leftArr)+len(rightArr))
-	mainP, rightP, leftP := 0,0,0
+	mainP, rightP, leftP := 0, 0, 0
 
-	for rightP < len(rightArr) && leftP < len(leftArr){
-		if rightArr[rightP] <= leftArr[leftP]{
+	for rightP < len(rightArr) && leftP < len(leftArr) {
+		if rightArr[rightP] <= leftArr[leftP] {
 			mainArr[mainP] = rightArr[rightP]
 			rightP++
 		} else {
@@ -30,13 +30,13 @@ func conquer(leftArr, rightArr []int) []int{
 		mainP++
 	}
 
-	for leftP < len(leftArr){
+	for leftP < len(leftArr) {
 		mainArr[mainP] = leftArr[leftP]
 		mainP++
 		leftP++
 	}
 
-	for rightP < len(rightArr){
+	for rightP < len(rightArr) {
 		mainArr[mainP] = rightArr[rightP]
 		mainP++
 		rightP++
@@ -46,6 +46,6 @@ func conquer(leftArr, rightArr []int) []int{
 
 }
 
-func main(){
-	fmt.Println(divide([]int{4,6,2,2,4,2,56,8,3,23}))
+func main() {
+	fmt.Println(divide([]int{4, 6, 2, 2, 4, 2, 56, 8, 3, 23}))
 }
