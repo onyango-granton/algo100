@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func divide(arr []int) []int {
 	//base case
 	if len(arr) < 2 {
@@ -83,9 +81,9 @@ func compareArr(arrOne, arrTwo []int) []int {
 	return resArr
 }
 
-func main() {
+/*func main() {
 	nums1 := []int{4, 5, 6, 7, 3, 23, 5}
 	nums2 := []int{2, 5, 6, 2, 4, 4, 2, 8}
 	// fmt.Println(divide([]int{3,6,8,3,24,5,5,3,42,4,67,6}))
 	fmt.Println(compareArr(nums2, nums1))
-}
+}*/
