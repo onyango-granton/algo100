@@ -26,6 +26,6 @@ func rotateArr(arr []int, positions int) []int {
 	return arr
 }
 
-func main() {
-	fmt.Println(rotateArr([]int{1,2,3,4,5,6,7}, 3))
-}
+// func main() {
+// 	fmt.Println(rotateArr([]int{1,2,3,4,5,6,7}, 3))
+// }
