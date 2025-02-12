@@ -32,7 +32,7 @@ func binarySearch(arr []int, target, start, stop int) int {
 	}
 }
 
-func main(){
-	fmt.Println(getFirstAndLastOcc([]int{2,3,4,5,6,7,8,8},8,0,0))
-	fmt.Println(binarySearch([]int{2,3,4,5,6,7,8,9},10,0,7))
-}
+// func main(){
+// 	fmt.Println(getFirstAndLastOcc([]int{2,3,4,5,6,7,8,8},8,0,0))
+// 	fmt.Println(binarySearch([]int{2,3,4,5,6,7,8,9},10,0,7))
+// }
