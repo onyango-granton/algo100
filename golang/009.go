@@ -2,18 +2,37 @@ package main
 
 import "fmt"
 
-func getFirstAndLastOcc(arr []int,pointer,target, first, last int)[]int{
-	if pointer == len(arr){
-		return []int{first, last}
+func getFirstAndLastOcc(arr []int,target, first, last int)[]int{
+	position := binarySearch(arr, target, 0, len(arr))
+	positionCopy :=  position
+	for arr[position] == target{
+		fmt.Println("here")
+		first = position
+		position --
 	}
-	if arr[pointer] == target && first == 0{
-		first = pointer
-	} else if arr[pointer] == target && first != 0{
-		last = pointer
+	for positionCopy < len(arr) && arr[positionCopy] == target{
+		last = positionCopy
+		positionCopy++
 	}
-	return getFirstAndLastOcc(arr, pointer + 1, target,first, last)
+	return []int{first, last}
+}
+
+func binarySearch(arr []int, target, start, stop int) int {
+	if start > stop{
+		return -1
+	}
+
+	midVal := start + (stop - start) / 2
+	if target == arr[midVal]{
+		return midVal
+	} else if target > arr[midVal]{
+		return binarySearch(arr, target, midVal + 1, stop)
+	} else {
+		return binarySearch(arr, target, start, midVal - 1)
+	}
 }
 
 func main(){
-	fmt.Println(getFirstAndLastOcc([]int{2,3,4,5,6,7,8,8},0,8,0,0))
+	fmt.Println(getFirstAndLastOcc([]int{2,3,4,5,6,7,8,8},8,0,0))
+	fmt.Println(binarySearch([]int{2,3,4,5,6,7,8,9},10,0,7))
 }
