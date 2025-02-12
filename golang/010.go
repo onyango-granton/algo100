@@ -15,6 +15,21 @@ func bubbleSort(arr []int)[]int{
 	return arr
 }
 
+func recursiveCallBubbleSort(arr []int, pointer, iteration int) []int {
+	//base case
+	if pointer == len(arr){
+		pointer = 0
+		iteration++
+	}
+	if iteration == len(arr){
+		return arr
+	}
+	if pointer + 1 < len(arr) && arr[pointer] > arr[pointer + 1]{
+		arr[pointer], arr[pointer + 1] = arr[pointer + 1], arr[pointer]
+	}
+	return recursiveCallBubbleSort(arr, pointer+1, iteration)
+}
+
 func main(){
-	fmt.Println(bubbleSort([]int{3,4,5,6,7,2,223,4,4,2}))
+	fmt.Println(recursiveCallBubbleSort([]int{3,4,5,6,7,2,223,4,4,2},0,0))
 }
