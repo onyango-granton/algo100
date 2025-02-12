@@ -1,6 +1,9 @@
-def findFirstAndLast(arr, target, first, last):
+def findFirstAndLast(arr, target):
     position = binarySort(arr,target, 0, len(arr)- 1)
+    if position == -1:
+        return [-1,-1]
     positionCopy = position
+    first, last = position
     while arr[position] == target:
         first = position
         position-=1
@@ -26,4 +29,4 @@ def binarySort(arr, target, start,stop):
     
 
 print(binarySort([2,3,4,5,6,7,8],8,0,6))
-print(findFirstAndLast([3,4,5,5,5,6,7,8],5,0,0))
+print(findFirstAndLast([3,4,5,5,5,6,7,8],5))
