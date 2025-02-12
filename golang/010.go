@@ -16,11 +16,12 @@ func bubbleSort(arr []int)[]int{
 }
 
 func recursiveCallBubbleSort(arr []int, pointer, iteration int) []int {
-	//base case
+	//pointer reset
 	if pointer == len(arr){
 		pointer = 0
 		iteration++
 	}
+	//base case
 	if iteration == len(arr){
 		return arr
 	}
