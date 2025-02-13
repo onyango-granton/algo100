@@ -25,7 +25,7 @@ def mergeTwoArr(arr1, arr2):
 
     return mainArr
 
-print(mergeTwoArr([2,34,5,5,3],[3,4,42,2,3]))
+#print(mergeTwoArr([2,34,5,5,3],[3,4,42,2,3]))
 
 arr1 = [1, 3, 5]
 arr2 = [2, 4, 6]
