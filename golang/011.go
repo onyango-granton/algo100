@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-type node struct{
-	left int
-	right int
-}
-
 func insertionSort(arr []int)[]int{
 
 	for i := range arr{
