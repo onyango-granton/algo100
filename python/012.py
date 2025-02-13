@@ -1,10 +1,9 @@
 def mergeTwoArr(arr1, arr2):
-    mainArr = list(range(len(arr1)+len(arr2)))
+    mainArr = [0] * (len(arr1)+len(arr2))
 
     mainP, arr1P, arr2P = 0,0,0
 
     while arr1P < len(arr1) and arr2P < len(arr2):
-        print("here")
         if arr1[arr1P] < arr2[arr2P]:
             mainArr[mainP] = arr1[arr1P]
             arr1P+=1
