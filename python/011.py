@@ -1,7 +1,7 @@
 def insertionSort(arr):
     for x in range (0, len(arr)):
         pointer = x
-        while pointer - 1 >= 0 and arr[pointer - 1] > arr[pointer]:
+        while pointer > 0 and arr[pointer - 1] > arr[pointer]:
             arr[pointer - 1], arr[pointer] = arr[pointer], arr[pointer-1]
             pointer-=1
     return arr
