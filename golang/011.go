@@ -6,7 +6,7 @@ func insertionSort(arr []int)[]int{
 
 	for i := range arr{
 		k := i
-		for k-1 >= 0 && arr[k-1] > arr[k]{
+		for k > 0 && arr[k-1] > arr[k]{
 			arr[k-1], arr[k] = arr[k], arr[k-1]
 			k--
 		} 
