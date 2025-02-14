@@ -1,21 +1,23 @@
 def findMissingNum(arr):
-    max, min = arr[0],arr[0]
+    # change name of variables as max and min are inbuilt in python
+    max_num, min_num = max(arr), min(arr)
 
-    for x in arr:
-        if x > max:
-            max = x
-        if x < min:
-            min = x
+# Not needed thus
+    # for x in arr:
+    #     if x > max:
+    #         max = x
+    #     if x < min:
+    #         min = x
 
-    newArr = [None] * (max-min+1)
+    # create a num set, set in python have one elem rep 8,8 comes to 8
+    # newArr = [None] * (max-min+1)
+    num_set = set(arr)
 
-    for x in arr:
-        newArr[x-min] = 1
+    for x in range(min_num, max_num+1):
+        if x not in num_set:
+            return x
 
-    for x in range (len(newArr)):
-        if newArr[x] == None:
-            return x+1
-        
+
     return -1
 
 print(findMissingNum([3, 7, 1, 2, 8, 4, 5]))
