@@ -30,6 +30,6 @@ func findMissingNum(arr []int)int{
 	return missingNum
 }
 
-func main(){
-	fmt.Println(findMissingNum([]int{3, 7, 1, 2, 8, 4, 5}))
-}
+// func main(){
+// 	fmt.Println(findMissingNum([]int{3, 7, 1, 2, 8, 4, 5}))
+// }
