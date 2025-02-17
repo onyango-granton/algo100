@@ -4,19 +4,10 @@ import "fmt"
 
 func getUnion(arr1, arr2 []int) []int {
 	numMap := make(map[int]bool)
-	// resArr := []int{}
 	var resArr []int
 
-	// append creates a new array in memory
-	// for _,ch := range append(arr1,arr2...){
-	// 	if numMap[ch] == false{
-	// 		resArr = append(resArr, ch)
-	// 		numMap[ch] = true
-	// 	}
-	// }
-
-	for _,num := range arr1{ //num for readability
-		if !numMap[num] { //readability
+	for _,num := range arr1{ 
+		if !numMap[num] { 
 			resArr = append(resArr, num)
 			numMap[num] = true
 		}
