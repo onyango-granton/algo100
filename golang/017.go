@@ -1,15 +1,15 @@
 package main
 
-func mergeSort(arr []int) []int {
+func MergeSort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
 	}
 	mid := len(arr) / 2
 
-	return merge(mergeSort(arr[:mid]), mergeSort(arr[mid:]))
+	return Merge(MergeSort(arr[:mid]), MergeSort(arr[mid:]))
 }
 
-func merge(leftArr, rightArr []int) []int {
+func Merge(leftArr, rightArr []int) []int {
 	mainArr := make([]int, len(leftArr)+len(rightArr))
 	leftP, rightP, mainP := 0, 0, 0
 
@@ -41,7 +41,7 @@ func merge(leftArr, rightArr []int) []int {
 }
 
 func findLongestConsecutiveSequence(arr []int) int {
-	sortedArr := mergeSort(arr)
+	sortedArr := MergeSort(arr)
 
 	listArr := [][]int{}
 	var max int
