@@ -1,50 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func zeroSumSubArr(arr []int) []int{
-	intMap := make(map[int]int)
-
+func zeroSumSubArr(arr []int) [][]int {
 	sum := 0
-	for i,ch := range arr{
-		sum += ch
-		toZero := sum - 0
 
-		val, ok := intMap[toZero]
-		if ok {
-			return []int{val, i}
+	subs := [][]int{}
+
+	start := 0
+	stop := 0
+
+	for i := 1; i < len(arr); i++{
+		for j := i; j < len(arr);j++{
+			
+			sum += arr[j]
+			fmt.Println(sum)
+			if sum == 0{
+				stop = i
+				subs = append(subs, []int{start, stop})
+				start = i
+			}
 		}
-		intMap[ch] = i
+		sum = 0
 	}
-
-	return []int{}
+	return subs
 }
 
-func main(){
+func abs(num int) int {
+	if num < 0 {
+		return num * -1
+	}
+	return num
+}
+
+func main() {
 	// intList := []int{1,2,-3,3,1,-4,2}
 	intList := []int{6, -1, -3, 4, -2, 2, 4, 6, -12, -7}
 
-	start := 0
-	stop := start
-
-	subArrList := [][]int{}
-
-	sum := 0
-
-	for stop < len(intList){
-		if sum + intList[stop] > sum && start > 0{
-			start = stop
-			sum = 0
-		} else {
-			sum += intList[stop]
-			if sum == 0 {
-				subArrList = append(subArrList, []int{start,stop})
-				start = stop + 1	
-			}
-		}
-		
-		stop ++
-	}
-
-	fmt.Println(subArrList)
+	fmt.Println(zeroSumSubArr(intList))
 }
