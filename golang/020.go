@@ -17,9 +17,11 @@ func zeroSumSubArr(arr []int) [][]int {
 			
 			sum += arr[j]
 			fmt.Println(sum)
-			if sum == 0{
+			if sum == 0 {
 				stop = i
-				subs = append(subs, []int{start, stop})
+				if start != stop{
+					subs = append(subs, []int{start, stop})
+				}
 				start = i
 			}
 		}
