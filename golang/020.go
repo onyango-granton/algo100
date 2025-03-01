@@ -5,27 +5,25 @@ import (
 )
 
 func zeroSumSubArr(arr []int) [][]int {
-	sum := 0
 
 	subs := [][]int{}
 
-	start := 0
-	stop := 0
 
-	for i := 1; i < len(arr); i++{
+	for i := 0; i < len(arr); i++{
+		start := i
+		stop := i
+		sum := 0 
 		for j := i; j < len(arr);j++{
 			
 			sum += arr[j]
-			fmt.Println(sum)
+			//fmt.Println(sum)
 			if sum == 0 {
-				stop = i
-				if start != stop{
-					subs = append(subs, []int{start, stop})
-				}
-				start = i
+				stop = j
+				subs = append(subs, []int{start, stop+1})
+				start = j
+				sum = 0
 			}
 		}
-		sum = 0
 	}
 	return subs
 }
