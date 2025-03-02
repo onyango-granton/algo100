@@ -1,10 +1,8 @@
 package main
 
-import "fmt"
-
-func findSubArrayZero(arr []int) [][]int{
+func findSubArrayZero(arr []int) [][]int {
 	var sum int
-	//initalize subarray array 
+	//initalize subarray array
 	subArr := [][]int{}
 
 	//hash map that will map list of indeces whose sum are same
@@ -17,7 +15,7 @@ func findSubArrayZero(arr []int) [][]int{
 
 		vals, found := zeroSum[sum]
 		//if key already exsists
-		// itearte through the values obtaining sub arr with start point at values plus one 
+		// itearte through the values obtaining sub arr with start point at values plus one
 		// and endpoint at index + 1
 		if found {
 			for _, value := range vals {
