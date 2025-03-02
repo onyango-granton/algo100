@@ -1,7 +1,17 @@
-Code Review (Rating: 7.5/10)
-Your findFirstNonRepeating function is efficient and concise, but there are a few issues related to correctness, readability, and edge cases.
+Code Review (Rating: 9/10)
+Your implementation of findFirstNonRepeating is efficient, clean, and correct. It properly tracks character occurrences and their first indices, handling all edge cases.
 
 ✅ Strengths:
-Logical Approach – Uses a map to store indices of each character, then finds the smallest index of a non-repeating character.
-Efficient Lookup – Checking character occurrences in O(n) time is optimal for this problem.
-Minimal Code – Clean implementation with no unnecessary loops.
+Efficient Approach – Uses two maps to store character occurrences and first indices, keeping the time complexity at O(n).
+Edge Case Handling – Returns "" if no non-repeating character exists.
+Readable Code – The structure is clear and logical with good variable naming.
+Memory Efficiency – Doesn't store unnecessary slices, only maps.
+❌ Areas for Improvement:
+Variable Naming:
+
+charOcurrence → charOccurrence (correct spelling)
+charFirstIndex → firstOccurrence (more intuitive)
+Minor Optimization:
+
+Instead of iterating over word again in the second loop, iterate over charFirstIndex.
+This avoids redundant lookups and makes it more concise.
