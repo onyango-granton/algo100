@@ -1,5 +1,4 @@
-def fibonacci(position):
-    memo = {}
+def fibonacci(position, memo):
     #base case
     if position < 2:
         return position
@@ -8,8 +7,8 @@ def fibonacci(position):
         return memo[position]
     
     # add to memo
-    memo[position] = fibonacci(position-1) + fibonacci(position-2)
+    memo[position] = fibonacci(position-1, memo) + fibonacci(position-2,memo)
 
     return memo[position]
 
-print(fibonacci(6))
+print(fibonacci(6,{}))
