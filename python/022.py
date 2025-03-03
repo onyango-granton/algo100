@@ -1,3 +1,6 @@
+# from functools import lru_cache
+
+# @lru_cache(None)
 def fibonacci(position, memo):
     #base case
     if position < 2:
