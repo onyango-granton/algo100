@@ -1,12 +1,14 @@
 def decoratorFunc(f):
     def wrapper(num, odd, even):
-        odd,even = f(num, odd, even)
+        result = f(num, odd, even)
+        if result:
+            even, odd = result
 
-        for x in odd:
-            print(x, "Odd")
-        
-        for y in even:
-            print(y, "even")
+            for x in odd:
+                print(x, "Odd")
+            
+            for y in even:
+                print(y, "even")
 
     return wrapper
 
