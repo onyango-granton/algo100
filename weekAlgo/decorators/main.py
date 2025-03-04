@@ -1,6 +1,6 @@
 def decoratorFunc(f):
-    def wrapper(f):
-        odd,even = f
+    def wrapper(num, odd, even):
+        odd,even = f(num, odd, even)
 
         for x in odd:
             print(x, "Odd")
