@@ -1,5 +1,5 @@
 def decoratorFunc(f):
-    def wrapper():
+    def wrapper(f):
         odd,even = f
 
         for x in odd:
