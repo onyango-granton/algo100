@@ -12,6 +12,6 @@ func tower_of_hanoi(n int, source, auxiliary, destination string){
 	tower_of_hanoi(n-1,auxiliary,source,destination)
 }
 
-func main() {
-	tower_of_hanoi(3,"A","B","C")
-}
+// func main() {
+// 	tower_of_hanoi(3,"A","B","C")
+// }
